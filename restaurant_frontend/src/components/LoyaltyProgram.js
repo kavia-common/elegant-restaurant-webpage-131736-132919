@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * PUBLIC_INTERFACE
@@ -7,6 +8,8 @@ import React, { useState, useCallback } from 'react';
  * accessibility support, and full theme integration (light/dark modes).
  */
 function LoyaltyProgram() {
+  const { t } = useTranslation(['common', 'loyalty']);
+  
   const [membershipData, setMembershipData] = useState({
     email: '',
     firstName: '',

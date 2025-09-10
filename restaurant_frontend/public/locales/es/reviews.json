@@ -1,0 +1,17 @@
+{
+  "title": "Lo Que Dicen Nuestros Huéspedes",
+  "subtitle": "Escucha a nuestros valiosos clientes sobre sus experiencias gastronómicas en Casa Moderna.",
+  "rating_summary": "Resumen general de calificaciones",
+  "average_rating": "Calificación promedio: {{rating}} de 5 estrellas",
+  "based_on": "Basado en {{count}} reseñas",
+  "show_more": "Mostrar Más Reseñas ({{remaining}} restantes)",
+  "verified": "Verificado",
+  "verified_customer": "Cliente verificado",
+  "show_less": "Mostrar menos",
+  "read_more": "Leer más",
+  "cta": {
+    "text": "¿Has cenado con nosotros? ¡Nos encantaría escuchar sobre tu experiencia!",
+    "button": "Comparte Tu Experiencia"
+  },
+  "customer_photos": "Foto de la experiencia gastronómica del cliente"
+}

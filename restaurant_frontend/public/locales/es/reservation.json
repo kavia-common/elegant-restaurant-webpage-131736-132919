@@ -1,0 +1,63 @@
+{
+  "title": "Reserva Tu Mesa",
+  "subtitle": "Reserva tu experiencia gastronómica en Casa Moderna. Confirmaremos tu reserva en 24 horas.",
+  "form": {
+    "sections": {
+      "datetime": "Fecha y Hora",
+      "contact": "Información de Contacto"
+    },
+    "fields": {
+      "date": "Fecha Preferida",
+      "time": "Hora Preferida",
+      "party_size": "Número de Personas",
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono",
+      "special_requests": "Solicitudes Especiales (Opcional)"
+    },
+    "placeholders": {
+      "date": "Selecciona una fecha",
+      "time": "Selecciona una hora",
+      "name": "Tu nombre completo",
+      "email": "tu@ejemplo.com",
+      "phone": "(123) 456-7890",
+      "special_requests": "Restricciones dietéticas, ocasión, preferencias de asientos..."
+    },
+    "guest_count": "{{count}} Invitado_other",
+    "submit": "Reservar Mesa",
+    "submitting": "Enviando..."
+  },
+  "info": {
+    "title": "Información de Reserva",
+    "rules": [
+      "Las reservas se confirman en 24 horas",
+      "Las mesas se mantienen por 15 minutos después de la hora de reserva",
+      "Grupos de 6+ pueden requerir un depósito",
+      "Cancelaciones aceptadas hasta 2 horas antes",
+      "Necesidades dietéticas especiales pueden ser acomodadas con aviso previo"
+    ],
+    "help": "¿Necesitas ayuda?",
+    "phone": "Llámanos al {{phone}}",
+    "email": "Envía un correo a {{email}}"
+  },
+  "status": {
+    "success": {
+      "title": "¡Reserva Enviada Exitosamente!",
+      "message": "¡Gracias! Hemos recibido tu solicitud de reserva y confirmaremos en 24 horas por correo electrónico."
+    },
+    "error": {
+      "title": "Error en la Reserva",
+      "message": "Lo sentimos, hubo un problema procesando tu reserva. Por favor intenta de nuevo o llámanos directamente."
+    }
+  },
+  "validation": {
+    "date_required": "Por favor selecciona una fecha",
+    "time_required": "Por favor selecciona una hora", 
+    "name_required": "El nombre es requerido",
+    "email_required": "El correo electrónico es requerido",
+    "email_invalid": "Por favor ingresa un correo electrónico válido",
+    "phone_required": "El número de teléfono es requerido",
+    "phone_invalid": "Por favor ingresa un número de teléfono válido",
+    "party_size_invalid": "El número de personas debe estar entre 1 y 12"
+  }
+}

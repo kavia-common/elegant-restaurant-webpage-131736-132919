@@ -1,0 +1,42 @@
+{
+  "title": "Mantente Informado",
+  "subtitle": "Suscríbete para recibir ofertas exclusivas, actualizaciones del menú estacional e invitaciones a eventos especiales.",
+  "form": {
+    "fields": {
+      "first_name": "Nombre",
+      "email": "Correo Electrónico"
+    },
+    "placeholders": {
+      "first_name": "Nombre",
+      "email": "tu@email.com"
+    },
+    "submit": "Suscribirse",
+    "submitting": "Suscribiendo..."
+  },
+  "benefits": {
+    "title": "Lo que recibirás:",
+    "items": [
+      "Ofertas exclusivas y descuentos solo para miembros",
+      "Primer acceso a nuevos elementos del menú estacional",
+      "Invitaciones prioritarias a eventos especiales",
+      "Consejos culinarios mensuales e insights del chef"
+    ]
+  },
+  "privacy": "Respetamos tu privacidad. Cancela la suscripción en cualquier momento. Política de Privacidad",
+  "status": {
+    "success": {
+      "title": "¡Bienvenido a la Familia Casa Moderna!",
+      "message": "¡Gracias por suscribirte! Revisa tu email para una oferta especial de bienvenida."
+    },
+    "error": {
+      "title": "Suscripción Fallida",
+      "message": "No pudimos procesar tu suscripción en este momento. Por favor intenta de nuevo o contáctanos directamente."
+    }
+  },
+  "validation": {
+    "email_required": "La dirección de correo electrónico es requerida",
+    "email_invalid": "Por favor ingresa una dirección de correo electrónico válida",
+    "first_name_required": "El nombre es requerido",
+    "first_name_min_length": "El nombre debe tener al menos 2 caracteres"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Stay in the Loop",
+  "subtitle": "Subscribe to receive exclusive offers, seasonal menu updates, and invitations to special events.",
+  "form": {
+    "fields": {
+      "first_name": "First Name",
+      "email": "Email Address"
+    },
+    "placeholders": {
+      "first_name": "First name",
+      "email": "your@email.com"
+    },
+    "submit": "Subscribe",
+    "submitting": "Subscribing..."
+  },
+  "benefits": {
+    "title": "What you'll receive:",
+    "items": [
+      "Exclusive member-only offers and discounts",
+      "First access to new seasonal menu items", 
+      "Priority invitations to special events",
+      "Monthly culinary tips and chef insights"
+    ]
+  },
+  "privacy": "We respect your privacy. Unsubscribe at any time. Privacy Policy",
+  "status": {
+    "success": {
+      "title": "Welcome to the Casa Moderna Family!",
+      "message": "Thank you for subscribing! Check your email for a special welcome offer."
+    },
+    "error": {
+      "title": "Subscription Failed",
+      "message": "We couldn't process your subscription right now. Please try again or contact us directly."
+    }
+  },
+  "validation": {
+    "email_required": "Email address is required",
+    "email_invalid": "Please enter a valid email address",
+    "first_name_required": "First name is required",
+    "first_name_min_length": "First name must be at least 2 characters"
+  }
+}

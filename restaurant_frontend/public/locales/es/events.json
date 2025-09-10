@@ -1,0 +1,55 @@
+{
+  "title": "Eventos Especiales y Promociones",
+  "subtitle": "No te pierdas nuestras experiencias especiales y ofertas por tiempo limitado.",
+  "featured_title": "Eventos y Ofertas Actuales",
+  "events": {
+    "live_jazz": {
+      "title": "Noches de Jazz en Vivo",
+      "subtitle": "Todos los Viernes y Sábados",
+      "description": "Únete a nosotros para una noche íntima de jazz en vivo con artistas locales. Ambiente perfecto para citas románticas y celebraciones.",
+      "details": [
+        "7:00 PM - 10:00 PM",
+        "Sin costo de entrada",
+        "Especiales de cócteles disponibles"
+      ],
+      "cta": "Reserva Tu Mesa",
+      "badge": "Semanal"
+    },
+    "wine_dinner": {
+      "title": "Serie de Cenas con Vino de Invierno",
+      "subtitle": "Tiempo Limitado",
+      "description": "Experimenta nuestro menú de invierno de 5 cursos cuidadosamente seleccionado y maridado con vinos premium de viñedos reconocidos.",
+      "details": [
+        "Disponible hasta marzo",
+        "$85 por persona",
+        "Opciones vegetarianas disponibles"
+      ],
+      "cta": "Reservar Cena con Vino",
+      "badge": "Estacional"
+    },
+    "happy_hour": {
+      "title": "Especial de Hora Feliz",
+      "subtitle": "Lunes - Jueves",
+      "description": "Disfruta 30% de descuento en todos los cócteles artesanales y aperitivos durante nuestra hora feliz extendida.",
+      "details": [
+        "4:00 PM - 6:30 PM",
+        "30% descuento en bebidas y aperitivos",
+        "Asientos en la barra disponibles"
+      ],
+      "cta": "Ver Menú",
+      "badge": "Oferta Diaria"
+    },
+    "valentines": {
+      "title": "Especial de Día de San Valentín",
+      "subtitle": "14 de febrero",
+      "description": "Celebra el amor con nuestra experiencia de cena romántica con un menú de degustación especial y champán de cortesía.",
+      "details": [
+        "Dos horarios: 6:00 PM y 8:30 PM",
+        "Menú de degustación especial",
+        "Brindis de champán de cortesía"
+      ],
+      "cta": "Hacer Reservación",
+      "badge": "Evento Especial"
+    }
+  }
+}

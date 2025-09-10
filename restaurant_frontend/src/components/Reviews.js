@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * PUBLIC_INTERFACE
@@ -102,21 +103,23 @@ function Reviews() {
     return text.substring(0, maxLength) + '...';
   };
 
+  const { t } = useTranslation(['common', 'reviews']);
+
   return (
     <section id="reviews" className="reviews" aria-label="Customer reviews and testimonials">
       <div className="container">
         <div className="reviews-header">
-          <h2 className="section-title">What Our Guests Say</h2>
+          <h2 className="section-title">{t('reviews:title')}</h2>
           <p className="section-subtitle">
-            Hear from our valued customers about their dining experiences at Casa Moderna.
+            {t('reviews:subtitle')}
           </p>
           
           {/* Overall Rating Summary */}
           <div className="rating-summary" role="region" aria-labelledby="rating-summary-title">
-            <h3 id="rating-summary-title" className="sr-only">Overall rating summary</h3>
+            <h3 id="rating-summary-title" className="sr-only">{t('reviews:rating_summary')}</h3>
             <div className="rating-overview">
               <div className="rating-display">
-                <span className="average-rating" aria-label={`Average rating: ${averageRating.toFixed(1)} out of 5 stars`}>
+                <span className="average-rating" aria-label={t('reviews:average_rating', { rating: averageRating.toFixed(1) })}>
                   {averageRating.toFixed(1)}
                 </span>
                 <div className="stars-display" aria-hidden="true">
@@ -124,7 +127,7 @@ function Reviews() {
                 </div>
               </div>
               <div className="rating-details">
-                <span className="review-count">Based on {totalReviews} reviews</span>
+                <span className="review-count">{t('reviews:based_on', { count: totalReviews })}</span>
               </div>
             </div>
           </div>
@@ -146,8 +149,8 @@ function Reviews() {
                     <div className="reviewer-details">
                       <h4 className="reviewer-name">{review.name}</h4>
                       {review.verified && (
-                        <span className="verified-badge" aria-label="Verified customer">
-                          <span aria-hidden="true">✓</span> Verified
+                        <span className="verified-badge" aria-label={t('reviews:verified_customer')}>
+                          <span aria-hidden="true">✓</span> {t('reviews:verified')}
                         </span>
                       )}
                     </div>
@@ -169,9 +172,9 @@ function Reviews() {
                         className="expand-button"
                         onClick={() => toggleReviewExpansion(review.id)}
                         aria-expanded={isExpanded}
-                        aria-label={isExpanded ? 'Show less' : 'Show more'}
+                        aria-label={isExpanded ? t('reviews:show_less') : t('buttons.show_more')}
                       >
-                        {isExpanded ? ' Show less' : ' Read more'}
+                        {isExpanded ? ` ${t('reviews:show_less')}` : ` ${t('reviews:read_more')}`}
                       </button>
                     )}
                   </blockquote>
@@ -180,7 +183,7 @@ function Reviews() {
                     <div className="review-photo">
                       <img
                         src={review.photo}
-                        alt="Customer's dining experience photo"
+                        alt={t('reviews:customer_photos')}
                         loading="lazy"
                         className="review-image"
                       />
@@ -201,17 +204,17 @@ function Reviews() {
               aria-label={`Show ${Math.min(3, reviewsData.length - visibleReviews)} more reviews`}
             >
               <span aria-hidden="true">📝</span>
-              Show More Reviews ({reviewsData.length - visibleReviews} remaining)
+              {t('reviews:show_more', { remaining: reviewsData.length - visibleReviews })}
             </button>
           </div>
         )}
 
         {/* Call to Action */}
         <div className="reviews-cta">
-          <p className="cta-text">Have you dined with us? We'd love to hear about your experience!</p>
+          <p className="cta-text">{t('reviews:cta.text')}</p>
           <a href="#contact" className="btn btn-primary cta-button">
             <span aria-hidden="true">✉️</span>
-            Share Your Experience
+            {t('reviews:cta.button')}
           </a>
         </div>
       </div>

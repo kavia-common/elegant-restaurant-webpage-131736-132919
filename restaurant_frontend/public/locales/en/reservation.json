@@ -1,0 +1,63 @@
+{
+  "title": "Reserve Your Table",
+  "subtitle": "Book your dining experience at Casa Moderna. We'll confirm your reservation within 24 hours.",
+  "form": {
+    "sections": {
+      "datetime": "Date & Time",
+      "contact": "Contact Information"
+    },
+    "fields": {
+      "date": "Preferred Date",
+      "time": "Preferred Time",
+      "party_size": "Party Size",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "special_requests": "Special Requests (Optional)"
+    },
+    "placeholders": {
+      "date": "Select a date",
+      "time": "Select a time",
+      "name": "Your full name",
+      "email": "you@example.com", 
+      "phone": "(123) 456-7890",
+      "special_requests": "Dietary restrictions, occasion, seating preferences..."
+    },
+    "guest_count": "{{count}} Guest_other",
+    "submit": "Reserve Table",
+    "submitting": "Submitting..."
+  },
+  "info": {
+    "title": "Reservation Information",
+    "rules": [
+      "Reservations are confirmed within 24 hours",
+      "Tables are held for 15 minutes past reservation time", 
+      "Parties of 6+ may require a deposit",
+      "Cancellations accepted up to 2 hours before",
+      "Special dietary needs can be accommodated with advance notice"
+    ],
+    "help": "Need help?",
+    "phone": "Call us at {{phone}}",
+    "email": "Email {{email}}"
+  },
+  "status": {
+    "success": {
+      "title": "Reservation Submitted Successfully!",
+      "message": "Thank you! We've received your reservation request and will confirm within 24 hours via email."
+    },
+    "error": {
+      "title": "Reservation Failed", 
+      "message": "We're sorry, but there was an issue processing your reservation. Please try again or call us directly."
+    }
+  },
+  "validation": {
+    "date_required": "Please select a date",
+    "time_required": "Please select a time",
+    "name_required": "Name is required",
+    "email_required": "Email is required",
+    "email_invalid": "Please enter a valid email address",
+    "phone_required": "Phone number is required",
+    "phone_invalid": "Please enter a valid phone number",
+    "party_size_invalid": "Party size must be between 1 and 12"
+  }
+}

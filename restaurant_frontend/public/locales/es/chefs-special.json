@@ -1,0 +1,61 @@
+{
+  "title": "Especial del Chef",
+  "subtitle": "Experimenta nuestras creaciones distintivas, cuidadosamente elaboradas con los mejores ingredientes y técnicas innovadoras.",
+  "featured_dish": "Plato Destacado",
+  "all_specials": "Todos los Especiales del Chef",
+  "navigation": {
+    "previous": "Plato anterior",
+    "next": "Siguiente plato",
+    "view_dish": "Ver plato {{number}}"
+  },
+  "badges": {
+    "chefs_favorite": "Favorito del Chef",
+    "off": "{{percentage}}% DESC"
+  },
+  "details": {
+    "ingredients": "Ingredientes:",
+    "preparation": "Preparación:",
+    "spice_level": "Nivel de Picante:",
+    "dietary": "Dietético:"
+  },
+  "chef_note": "Nota del Chef:",
+  "actions": {
+    "reserve_to_try": "Reserva para Probarlo",
+    "view_full_menu": "Ver Menú Completo"
+  },
+  "dishes": {
+    "duck_breast": {
+      "name": "Pechuga de Pato Sellada",
+      "subtitle": "Creación Distintiva del Chef",
+      "description": "Suculenta pechuga de pato sellada a la perfección, servida con reducción de cereza al oporto, papas fingerling asadas y verduras de temporada. La interpretación de nuestro chef de un plato francés clásico con toque moderno.",
+      "long_description": "Nuestra pechuga de pato distintiva proviene de granjas locales y es añejada para obtener sabor óptimo. El pato se marca expertamente y se sella para lograr una piel perfectamente crujiente mientras mantiene un interior tierno y rosado. La reducción de cereza al oporto se hace en casa usando cerezas frescas y vino de oporto añejado, creando un hermoso balance de notas dulces y saladas.",
+      "dietary": ["SG Disponible"],
+      "preparation_time": "25-30 minutos",
+      "spice_level": "Suave",
+      "chef_note": "Se mariDA bellamente con nuestra selección de Pinot Noir de la casa.",
+      "ingredients": ["Pechuga de pato de corral", "Reducción de cereza al oporto", "Papas fingerling", "Verduras de temporada", "Hierbas frescas"]
+    },
+    "lobster_risotto": {
+      "name": "Risotto de Langosta",
+      "subtitle": "Especial de Hoy",
+      "description": "Arroz Arborio cremoso cocinado con langosta fresca de Maine, azafrán, y terminado con parmesano y microvegetales. Un plato lujoso que resalta el sabor dulce y delicado de la langosta fresca.",
+      "long_description": "Hecho con el mejor arroz Arborio de Italia, cocido lentamente con vino blanco y caldo de langosta. La carne de langosta fresca de Maine se incorpora suavemente al final para preservar su textura delicada. El azafrán añade una nota floral sutil y un hermoso color dorado.",
+      "dietary": ["SG"],
+      "preparation_time": "20-25 minutos",
+      "spice_level": "Ninguno",
+      "chef_note": "Mejor disfrutado con un Chardonnay crujiente o Champagne.",
+      "ingredients": ["Langosta de Maine", "Arroz Arborio", "Azafrán", "Parmesano", "Vino blanco", "Microvegetales"]
+    },
+    "wagyu_tenderloin": {
+      "name": "Lomo de Res Wagyu",
+      "subtitle": "Selección Premium",
+      "description": "Lomo de res Wagyu grado A5, asado a tu preferencia y servido con puré de papas con trufa, espárragos asados, y jus de vino tinto. Una experiencia gastronómica excepcional para los amantes de la carne.",
+      "long_description": "Esta carne premium Wagyu es reconocida por su increíble marmoleo y textura mantecosa. Cada corte es seleccionado a mano y añejado por 28 días. El puré de papas con trufa se hace con papas Yukon Gold y se termina con virutas reales de trufa negra.",
+      "dietary": ["SG Disponible"],
+      "preparation_time": "15-20 minutos",
+      "spice_level": "Ninguno",
+      "chef_note": "Recomendado con nuestra selección de Cabernet Sauvignon añejado.",
+      "ingredients": ["Carne Wagyu A5", "Trufa negra", "Papas Yukon", "Espárragos", "Jus de vino tinto"]
+    }
+  }
+}

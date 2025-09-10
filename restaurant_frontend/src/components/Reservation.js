@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * PUBLIC_INTERFACE
@@ -7,6 +8,8 @@ import React, { useState, useCallback, useContext } from 'react';
  * form validation, and success/failure feedback.
  */
 function Reservation() {
+  const { t } = useTranslation(['common', 'reservation']);
+  
   const [formData, setFormData] = useState({
     date: '',
     time: '',
@@ -48,35 +51,35 @@ function Reservation() {
     const newErrors = {};
 
     if (!formData.date) {
-      newErrors.date = 'Please select a date';
+      newErrors.date = t('reservation:validation.date_required');
     }
 
     if (!formData.time) {
-      newErrors.time = 'Please select a time';
+      newErrors.time = t('reservation:validation.time_required');
     }
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = t('reservation:validation.name_required');
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t('reservation:validation.email_required');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = t('reservation:validation.email_invalid');
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = t('reservation:validation.phone_required');
     } else if (!/^[\+]?[\d\s\-\(\)]{10,}$/.test(formData.phone.replace(/\s/g, ''))) {
-      newErrors.phone = 'Please enter a valid phone number';
+      newErrors.phone = t('reservation:validation.phone_invalid');
     }
 
     if (formData.partySize < 1 || formData.partySize > 12) {
-      newErrors.partySize = 'Party size must be between 1 and 12';
+      newErrors.partySize = t('reservation:validation.party_size_invalid');
     }
 
     return newErrors;
-  }, [formData]);
+  }, [formData, t]);
 
   const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
@@ -150,9 +153,9 @@ function Reservation() {
     <section id="reservation" className="reservation" aria-label="Table reservation">
       <div className="container">
         <div className="reservation-header">
-          <h2 className="section-title">Reserve Your Table</h2>
+          <h2 className="section-title">{t('reservation:title')}</h2>
           <p className="section-subtitle">
-            Book your dining experience at Casa Moderna. We'll confirm your reservation within 24 hours.
+            {t('reservation:subtitle')}
           </p>
         </div>
 
@@ -164,12 +167,12 @@ function Reservation() {
               <div className="form-section">
                 <h3 className="form-section-title">
                   <span className="form-section-icon" aria-hidden="true">📅</span>
-                  Date & Time
+                  {t('reservation:form.sections.datetime')}
                 </h3>
                 
                 <div className="form-row-group">
                   <div className="form-row">
-                    <label htmlFor="reservation-date">Preferred Date</label>
+                    <label htmlFor="reservation-date">{t('reservation:form.fields.date')}</label>
                     <select
                       id="reservation-date"
                       name="date"
@@ -178,7 +181,7 @@ function Reservation() {
                       className={errors.date ? 'error' : ''}
                       required
                     >
-                      <option value="">Select a date</option>
+                      <option value="">{t('reservation:form.placeholders.date')}</option>
                       {availableDates.map(date => (
                         <option key={date} value={date}>
                           {formatDateForDisplay(date)}
@@ -189,7 +192,7 @@ function Reservation() {
                   </div>
 
                   <div className="form-row">
-                    <label htmlFor="reservation-time">Preferred Time</label>
+                    <label htmlFor="reservation-time">{t('reservation:form.fields.time')}</label>
                     <select
                       id="reservation-time"
                       name="time"
@@ -198,7 +201,7 @@ function Reservation() {
                       className={errors.time ? 'error' : ''}
                       required
                     >
-                      <option value="">Select a time</option>
+                      <option value="">{t('reservation:form.placeholders.time')}</option>
                       {timeSlots.map(time => (
                         <option key={time} value={time}>
                           {time}
@@ -209,7 +212,7 @@ function Reservation() {
                   </div>
 
                   <div className="form-row">
-                    <label htmlFor="party-size">Party Size</label>
+                    <label htmlFor="party-size">{t('reservation:form.fields.party_size')}</label>
                     <select
                       id="party-size"
                       name="partySize"
@@ -220,7 +223,7 @@ function Reservation() {
                     >
                       {[...Array(12)].map((_, i) => (
                         <option key={i + 1} value={i + 1}>
-                          {i + 1} {i === 0 ? 'Guest' : 'Guests'}
+                          {t('reservation:form.guest_count', { count: i + 1 })}
                         </option>
                       ))}
                     </select>
@@ -233,19 +236,19 @@ function Reservation() {
               <div className="form-section">
                 <h3 className="form-section-title">
                   <span className="form-section-icon" aria-hidden="true">👤</span>
-                  Contact Information
+                  {t('reservation:form.sections.contact')}
                 </h3>
                 
                 <div className="form-row-group">
                   <div className="form-row">
-                    <label htmlFor="reservation-name">Full Name</label>
+                    <label htmlFor="reservation-name">{t('reservation:form.fields.name')}</label>
                     <input
                       id="reservation-name"
                       name="name"
                       type="text"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Your full name"
+                      placeholder={t('reservation:form.placeholders.name')}
                       className={errors.name ? 'error' : ''}
                       required
                     />
@@ -253,14 +256,14 @@ function Reservation() {
                   </div>
 
                   <div className="form-row">
-                    <label htmlFor="reservation-email">Email Address</label>
+                    <label htmlFor="reservation-email">{t('reservation:form.fields.email')}</label>
                     <input
                       id="reservation-email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="you@example.com"
+                      placeholder={t('reservation:form.placeholders.email')}
                       className={errors.email ? 'error' : ''}
                       required
                     />
@@ -268,14 +271,14 @@ function Reservation() {
                   </div>
 
                   <div className="form-row">
-                    <label htmlFor="reservation-phone">Phone Number</label>
+                    <label htmlFor="reservation-phone">{t('reservation:form.fields.phone')}</label>
                     <input
                       id="reservation-phone"
                       name="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="(123) 456-7890"
+                      placeholder={t('reservation:form.placeholders.phone')}
                       className={errors.phone ? 'error' : ''}
                       required
                     />
@@ -283,13 +286,13 @@ function Reservation() {
                   </div>
 
                   <div className="form-row">
-                    <label htmlFor="special-requests">Special Requests (Optional)</label>
+                    <label htmlFor="special-requests">{t('reservation:form.fields.special_requests')}</label>
                     <textarea
                       id="special-requests"
                       name="specialRequests"
                       value={formData.specialRequests}
                       onChange={handleInputChange}
-                      placeholder="Dietary restrictions, occasion, seating preferences..."
+                      placeholder={t('reservation:form.placeholders.special_requests')}
                       rows="3"
                     />
                   </div>
@@ -302,17 +305,17 @@ function Reservation() {
                   type="submit"
                   className="btn btn-primary btn-large"
                   disabled={isSubmitting}
-                  aria-label={isSubmitting ? 'Submitting reservation...' : 'Submit reservation'}
+                  aria-label={isSubmitting ? t('reservation:form.submitting') : t('reservation:form.submit')}
                 >
                   {isSubmitting ? (
                     <>
                       <span className="spinner" aria-hidden="true"></span>
-                      Submitting...
+                      {t('reservation:form.submitting')}
                     </>
                   ) : (
                     <>
                       <span aria-hidden="true">🍽️</span>
-                      Reserve Table
+                      {t('reservation:form.submit')}
                     </>
                   )}
                 </button>
@@ -325,20 +328,18 @@ function Reservation() {
             <div className="info-card">
               <h3 className="info-title">
                 <span aria-hidden="true">ℹ️</span>
-                Reservation Information
+                {t('reservation:info.title')}
               </h3>
               <ul className="info-list">
-                <li>Reservations are confirmed within 24 hours</li>
-                <li>Tables are held for 15 minutes past reservation time</li>
-                <li>Parties of 6+ may require a deposit</li>
-                <li>Cancellations accepted up to 2 hours before</li>
-                <li>Special dietary needs can be accommodated with advance notice</li>
+                {t('reservation:info.rules', { returnObjects: true }).map((rule, index) => (
+                  <li key={index}>{rule}</li>
+                ))}
               </ul>
               
               <div className="contact-info">
-                <p><strong>Need help?</strong></p>
-                <p>Call us at <a href="tel:+1234567890" className="link">+1 (234) 567-890</a></p>
-                <p>Email <a href="mailto:reservations@casamoderna.com" className="link">reservations@casamoderna.com</a></p>
+                <p><strong>{t('reservation:info.help')}</strong></p>
+                <p>{t('reservation:info.phone', { phone: t('contact.info.phone') })}</p>
+                <p>{t('reservation:info.email', { email: 'reservations@casamoderna.com' })}</p>
               </div>
             </div>
           </div>
@@ -351,16 +352,16 @@ function Reservation() {
               <div className="status-content success">
                 <span className="status-icon" aria-hidden="true">✅</span>
                 <div>
-                  <h4>Reservation Submitted Successfully!</h4>
-                  <p>Thank you! We've received your reservation request and will confirm within 24 hours via email.</p>
+                  <h4>{t('reservation:status.success.title')}</h4>
+                  <p>{t('reservation:status.success.message')}</p>
                 </div>
               </div>
             ) : (
               <div className="status-content error">
                 <span className="status-icon" aria-hidden="true">❌</span>
                 <div>
-                  <h4>Reservation Failed</h4>
-                  <p>We're sorry, but there was an issue processing your reservation. Please try again or call us directly.</p>
+                  <h4>{t('reservation:status.error.title')}</h4>
+                  <p>{t('reservation:status.error.message')}</p>
                 </div>
               </div>
             )}

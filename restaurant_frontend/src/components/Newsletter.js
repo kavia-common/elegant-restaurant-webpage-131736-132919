@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * PUBLIC_INTERFACE
@@ -7,6 +8,8 @@ import React, { useState, useCallback } from 'react';
  * and full theme integration (light/dark modes).
  */
 function Newsletter() {
+  const { t } = useTranslation(['common', 'newsletter']);
+  
   const [formData, setFormData] = useState({
     email: '',
     firstName: ''
@@ -21,19 +24,19 @@ function Newsletter() {
     const newErrors = {};
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email address is required';
+      newErrors.email = t('newsletter:validation.email_required');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = t('newsletter:validation.email_invalid');
     }
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First name is required';
+      newErrors.firstName = t('newsletter:validation.first_name_required');
     } else if (formData.firstName.trim().length < 2) {
-      newErrors.firstName = 'First name must be at least 2 characters';
+      newErrors.firstName = t('newsletter:validation.first_name_min_length');
     }
 
     return newErrors;
-  }, [formData]);
+  }, [formData, t]);
 
   const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
@@ -95,10 +98,10 @@ function Newsletter() {
           <div className="newsletter-header">
             <h2 className="newsletter-title">
               <span className="newsletter-icon" aria-hidden="true">📧</span>
-              Stay in the Loop
+              {t('newsletter:title')}
             </h2>
             <p className="newsletter-subtitle">
-              Subscribe to receive exclusive offers, seasonal menu updates, and invitations to special events.
+              {t('newsletter:subtitle')}
             </p>
           </div>
 
@@ -108,7 +111,7 @@ function Newsletter() {
                 <div className="newsletter-inputs">
                   <div className="newsletter-field">
                     <label htmlFor="newsletter-firstName" className="sr-only">
-                      First Name
+                      {t('newsletter:form.fields.first_name')}
                     </label>
                     <input
                       id="newsletter-firstName"
@@ -116,7 +119,7 @@ function Newsletter() {
                       type="text"
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      placeholder="First name"
+                      placeholder={t('newsletter:form.placeholders.first_name')}
                       className={`newsletter-input ${errors.firstName ? 'error' : ''}`}
                       required
                       aria-describedby={errors.firstName ? 'firstName-error' : undefined}
@@ -130,7 +133,7 @@ function Newsletter() {
 
                   <div className="newsletter-field">
                     <label htmlFor="newsletter-email" className="sr-only">
-                      Email Address
+                      {t('newsletter:form.fields.email')}
                     </label>
                     <input
                       id="newsletter-email"
@@ -138,7 +141,7 @@ function Newsletter() {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="your@email.com"
+                      placeholder={t('newsletter:form.placeholders.email')}
                       className={`newsletter-input ${errors.email ? 'error' : ''}`}
                       required
                       aria-describedby={errors.email ? 'email-error' : undefined}
@@ -155,17 +158,17 @@ function Newsletter() {
                   type="submit"
                   className="newsletter-submit btn btn-primary"
                   disabled={isSubmitting}
-                  aria-label={isSubmitting ? 'Subscribing...' : 'Subscribe to newsletter'}
+                  aria-label={isSubmitting ? t('newsletter:form.submitting') : t('newsletter:form.submit')}
                 >
                   {isSubmitting ? (
                     <>
                       <span className="spinner" aria-hidden="true"></span>
-                      Subscribing...
+                      {t('newsletter:form.submitting')}
                     </>
                   ) : (
                     <>
                       <span aria-hidden="true">✉️</span>
-                      Subscribe
+                      {t('newsletter:form.submit')}
                     </>
                   )}
                 </button>
@@ -173,8 +176,7 @@ function Newsletter() {
 
               <div className="newsletter-privacy">
                 <p className="privacy-text">
-                  We respect your privacy. Unsubscribe at any time. 
-                  <a href="#contact" className="link"> Privacy Policy</a>
+                  {t('newsletter:privacy')}
                 </p>
               </div>
             </form>
@@ -182,24 +184,19 @@ function Newsletter() {
 
           {/* Benefits Section */}
           <div className="newsletter-benefits">
-            <h3 className="benefits-title">What you'll receive:</h3>
+            <h3 className="benefits-title">{t('newsletter:benefits.title')}</h3>
             <ul className="benefits-list" aria-label="Newsletter benefits">
-              <li className="benefit-item">
-                <span className="benefit-icon" aria-hidden="true">🎉</span>
-                <span>Exclusive member-only offers and discounts</span>
-              </li>
-              <li className="benefit-item">
-                <span className="benefit-icon" aria-hidden="true">🍽️</span>
-                <span>First access to new seasonal menu items</span>
-              </li>
-              <li className="benefit-item">
-                <span className="benefit-icon" aria-hidden="true">🎫</span>
-                <span>Priority invitations to special events</span>
-              </li>
-              <li className="benefit-item">
-                <span className="benefit-icon" aria-hidden="true">📰</span>
-                <span>Monthly culinary tips and chef insights</span>
-              </li>
+              {t('newsletter:benefits.items', { returnObjects: true }).map((item, index) => (
+                <li key={index} className="benefit-item">
+                  <span className="benefit-icon" aria-hidden="true">
+                    {index === 0 && '🎉'}
+                    {index === 1 && '🍽️'}
+                    {index === 2 && '🎫'}
+                    {index === 3 && '📰'}
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -211,16 +208,16 @@ function Newsletter() {
               <div className="status-content success">
                 <span className="status-icon" aria-hidden="true">🎉</span>
                 <div>
-                  <h4>Welcome to the Casa Moderna Family!</h4>
-                  <p>Thank you for subscribing! Check your email for a special welcome offer.</p>
+                  <h4>{t('newsletter:status.success.title')}</h4>
+                  <p>{t('newsletter:status.success.message')}</p>
                 </div>
               </div>
             ) : (
               <div className="status-content error">
                 <span className="status-icon" aria-hidden="true">⚠️</span>
                 <div>
-                  <h4>Subscription Failed</h4>
-                  <p>We couldn't process your subscription right now. Please try again or contact us directly.</p>
+                  <h4>{t('newsletter:status.error.title')}</h4>
+                  <p>{t('newsletter:status.error.message')}</p>
                 </div>
               </div>
             )}

@@ -117,6 +117,11 @@ textarea:focus-visible {
   justify-content: space-between;
   height: 68px;
 }
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 .brand {
   display: flex;
   align-items: center;
@@ -183,6 +188,56 @@ textarea:focus-visible {
 
 .nav-current::after {
   width: 100% !important;
+}
+
+/* Language Selector */
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.language-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  min-height: 36px;
+  min-width: 60px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 8px;
+  padding-right: 24px;
+}
+
+.language-select:hover,
+.language-select:focus-visible {
+  background-color: color-mix(in oklab, var(--bg-muted) 70%, var(--bg) 30%);
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.language-select:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(0,121,107,0.15);
+}
+
+[data-theme="dark"] .language-select {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23a4adbb" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
 }
 
 /* Theme toggle */
@@ -3202,6 +3257,24 @@ label.required::after {
   .rating-overview { flex-direction: column; gap: 16px; text-align: center; }
   .nav-links { display: none; } /* keeps it simple without JS menu */
   .footer-inner { grid-template-columns: 1fr; text-align: center; }
+  
+  /* Navigation controls responsive */
+  .nav-controls {
+    gap: 8px;
+  }
+  .language-select {
+    min-width: 50px;
+    font-size: 11px;
+    padding: 6px 8px;
+    padding-right: 20px;
+  }
+  .theme-toggle {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  .theme-toggle span[style] {
+    font-size: 11px !important;
+  }
 }
 @media (max-width: 560px) {
   .gallery-grid { grid-template-columns: 1fr; }
@@ -3213,4 +3286,26 @@ label.required::after {
   .review-card { padding: 20px; }
   .review-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .reviews-cta { padding: 24px 18px; }
+  
+  /* Mobile navigation controls */
+  .nav-controls {
+    gap: 6px;
+  }
+  .language-select {
+    min-width: 45px;
+    font-size: 10px;
+    padding: 4px 6px;
+    padding-right: 18px;
+    background-size: 6px;
+    background-position: right 4px center;
+  }
+  .theme-toggle {
+    padding: 4px 6px;
+    gap: 4px;
+    min-height: 32px;
+    min-width: 32px;
+  }
+  .theme-toggle span[style] {
+    display: none;
+  }
 }

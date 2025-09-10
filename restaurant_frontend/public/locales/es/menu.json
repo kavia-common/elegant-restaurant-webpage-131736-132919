@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "starters": "Entradas",
+    "mains": "Platos Principales",
+    "desserts": "Postres",
+    "drinks": "Bebidas"
+  },
+  "items": {
+    "starters": {
+      "heirloom_tomato_bruschetta": {
+        "name": "Bruschetta de Tomate Heirloom",
+        "description": "Pan de masa madre asado, albahaca, glaseado balsámico"
+      },
+      "crispy_calamari": {
+        "name": "Calamares Crujientes",
+        "description": "Aioli de limón, chile encurtido"
+      },
+      "charred_broccolini": {
+        "name": "Broccolini Carbonizado",
+        "description": "Romesco de almendras, ralladura de limón"
+      }
+    },
+    "mains": {
+      "herb_roasted_chicken": {
+        "name": "Pollo Asado con Hierbas",
+        "description": "Puré de ajo, verduras de temporada, jus"
+      },
+      "seared_salmon": {
+        "name": "Salmón Sellado",
+        "description": "Beurre blanc cítrico, farro, espárragos"
+      },
+      "wild_mushroom_risotto": {
+        "name": "Risotto de Hongos Silvestres",
+        "description": "Parmesano, aceite de trufa, hierbas"
+      }
+    },
+    "desserts": {
+      "lemon_tart": {
+        "name": "Tarta de Limón",
+        "description": "Merengue tostado, coulis de frutos rojos"
+      },
+      "chocolate_fondant": {
+        "name": "Fondant de Chocolate",
+        "description": "Helado de vainilla, praline de avellana"
+      },
+      "vanilla_panna_cotta": {
+        "name": "Panna Cotta de Vainilla",
+        "description": "Frutos rojos macerados, menta"
+      }
+    },
+    "drinks": {
+      "classic_negroni": {
+        "name": "Negroni Clásico",
+        "description": "Ginebra, Campari, vermut dulce"
+      },
+      "smoky_paloma": {
+        "name": "Paloma Ahumada",
+        "description": "Mezcal, toronja, lima, soda"
+      },
+      "zero_proof_spritz": {
+        "name": "Spritz Sin Alcohol",
+        "description": "Cítricos, hibisco, soda"
+      }
+    }
+  },
+  "tags": {
+    "vegetarian": "V",
+    "gluten_free": "SG",
+    "non_alcoholic": "SA"
+  },
+  "note": "{{vegetarian}} Vegetariano • {{gluten_free}} Opciones sin gluten disponibles • Por favor notifícanos de cualquier alergia o restricción dietética.",
+  "currency": "$"
+}

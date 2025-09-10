@@ -1,0 +1,61 @@
+{
+  "title": "Chef's Special",
+  "subtitle": "Experience our signature creations, carefully crafted with the finest ingredients and innovative techniques.",
+  "featured_dish": "Featured Dish",
+  "all_specials": "All Chef's Specials",
+  "navigation": {
+    "previous": "Previous dish",
+    "next": "Next dish",
+    "view_dish": "View dish {{number}}"
+  },
+  "badges": {
+    "chefs_favorite": "Chef's Favorite",
+    "off": "{{percentage}}% OFF"
+  },
+  "details": {
+    "ingredients": "Ingredients:",
+    "preparation": "Preparation:",
+    "spice_level": "Spice Level:",
+    "dietary": "Dietary:"
+  },
+  "chef_note": "Chef's Note:",
+  "actions": {
+    "reserve_to_try": "Reserve to Try This",
+    "view_full_menu": "View Full Menu"
+  },
+  "dishes": {
+    "duck_breast": {
+      "name": "Pan-Seared Duck Breast",
+      "subtitle": "Chef's Signature Creation",
+      "description": "Succulent duck breast pan-seared to perfection, served with a cherry port reduction, roasted fingerling potatoes, and seasonal vegetables. Our chef's interpretation of a classic French dish with modern flair.",
+      "long_description": "Our signature duck breast is sourced from local farms and aged for optimal flavor. The duck is expertly scored and seared to achieve a perfect crispy skin while maintaining a tender, rosy interior. The cherry port reduction is made in-house using fresh cherries and aged port wine, creating a beautiful balance of sweet and savory notes.",
+      "dietary": ["GF Available"],
+      "preparation_time": "25-30 minutes",
+      "spice_level": "Mild",
+      "chef_note": "Paired beautifully with our house Pinot Noir selection.",
+      "ingredients": ["Free-range duck breast", "Cherry port reduction", "Fingerling potatoes", "Seasonal vegetables", "Fresh herbs"]
+    },
+    "lobster_risotto": {
+      "name": "Lobster Risotto",
+      "subtitle": "Today's Special",
+      "description": "Creamy Arborio rice cooked with fresh Maine lobster, saffron, and finished with parmesan and microgreens. A luxurious dish that showcases the sweet delicate flavor of fresh lobster.",
+      "long_description": "Made with the finest Arborio rice from Italy, slowly cooked with white wine and lobster stock. Fresh Maine lobster meat is gently folded in at the end to preserve its delicate texture. The saffron adds a subtle floral note and beautiful golden color.",
+      "dietary": ["GF"],
+      "preparation_time": "20-25 minutes",
+      "spice_level": "None",
+      "chef_note": "Best enjoyed with a crisp Chardonnay or Champagne.",
+      "ingredients": ["Maine lobster", "Arborio rice", "Saffron", "Parmesan", "White wine", "Microgreens"]
+    },
+    "wagyu_tenderloin": {
+      "name": "Wagyu Beef Tenderloin",
+      "subtitle": "Premium Selection",
+      "description": "Grade A5 Wagyu beef tenderloin, grilled to your preference and served with truffle mashed potatoes, grilled asparagus, and red wine jus. An exceptional dining experience for meat lovers.",
+      "long_description": "This premium Wagyu beef is renowned for its incredible marbling and buttery texture. Each cut is hand-selected and aged for 28 days. The truffle mashed potatoes are made with Yukon Gold potatoes and finished with real black truffle shavings.",
+      "dietary": ["GF Available"],
+      "preparation_time": "15-20 minutes",
+      "spice_level": "None",
+      "chef_note": "Recommended with our selection of aged Cabernet Sauvignon.",
+      "ingredients": ["A5 Wagyu beef", "Black truffle", "Yukon potatoes", "Asparagus", "Red wine jus"]
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "brand": {
+    "name": "Casa Moderna",
+    "tagline": "Sabores Modernos. Hospitalidad Cálida."
+  },
+  "navigation": {
+    "events": "Eventos",
+    "rewards": "Recompensas",
+    "menu": "Menú",
+    "chefs_special": "Especial del Chef",
+    "reviews": "Reseñas",
+    "reservations": "Reservaciones",
+    "hours": "Horarios",
+    "contact": "Contacto",
+    "gallery": "Galería",
+    "location": "Ubicación",
+    "newsletter": "Boletín",
+    "skip_to_main": "Ir al contenido principal",
+    "skip_to_menu": "Ir al menú",
+    "skip_to_reservations": "Ir a reservaciones"
+  },
+  "theme": {
+    "switch_to": "Cambiar a tema {{theme}}",
+    "currently_using": "Usando actualmente tema {{theme}}",
+    "current_theme": "Tema actual: {{theme}}",
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
+  "hero": {
+    "title": "Sabores Modernos. Hospitalidad Cálida.",
+    "subtitle": "Una experiencia gastronómica elegante con ingredientes de temporada, especialidades al fuego y cócteles artesanales.",
+    "explore_menu": "Explorar Menú",
+    "reserve_table": "Reservar Mesa",
+    "highlights": {
+      "seasonal": "De Temporada • Local • Sostenible",
+      "dietary": "Opciones Vegetarianas y Sin Gluten",
+      "beverages": "Cócteles Artesanales y Vinos Finos"
+    }
+  },
+  "sections": {
+    "menu": {
+      "title": "Nuestro Menú",
+      "subtitle": "Platos cuidadosamente seleccionados, preparados frescos diariamente."
+    },
+    "hours": {
+      "title": "Horarios de Apertura"
+    },
+    "contact": {
+      "title": "Contáctanos"
+    },
+    "gallery": {
+      "title": "Galería",
+      "subtitle": "Un vistazo a nuestro espacio, cocina y ambiente."
+    },
+    "location": {
+      "title": "Encuéntranos",
+      "subtitle": "Estamos ubicados en el corazón de la ciudad, a pasos de la plaza central."
+    }
+  },
+  "hours": {
+    "monday_thursday": "Lun–Jue",
+    "friday": "Vie",
+    "saturday": "Sáb",
+    "sunday": "Dom",
+    "brunch_note": "Brunch Sáb y Dom 10:00 AM – 2:00 PM"
+  },
+  "contact": {
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "message": "Mensaje",
+      "name_placeholder": "Tu nombre completo",
+      "email_placeholder": "tu@ejemplo.com",
+      "message_placeholder": "¿Cómo podemos ayudarte?",
+      "send": "Enviar",
+      "thank_you": "¡Gracias, {{name}}! Te contactaremos pronto."
+    },
+    "details": {
+      "phone": "Teléfono:",
+      "email": "Correo:",
+      "address": "Dirección:"
+    },
+    "info": {
+      "phone": "+1 (234) 567‑890",
+      "email": "hola@casamoderna.com",
+      "address": "123 Market Street, San Francisco, CA"
+    }
+  },
+  "location": {
+    "address": "Dirección:",
+    "parking": "Estacionamiento:",
+    "transit": "Transporte:",
+    "parking_info": "Estacionamiento en la calle y garaje disponible",
+    "transit_info": "MUNI y BART a 5 minutos caminando"
+  },
+  "footer": {
+    "copyright": "© {{year}} Casa Moderna. Todos los derechos reservados."
+  },
+  "buttons": {
+    "view_menu": "Ver Menú Completo",
+    "show_more": "Mostrar Más",
+    "show_less": "Mostrar Menos", 
+    "read_more": "Leer más",
+    "learn_more": "Aprender Más"
+  },
+  "accessibility": {
+    "restaurant_image": "Hermosa presentación de nuestros platos destacados en un elegante ambiente de restaurante",
+    "gallery_image": "Vista del restaurante {{number}}"
+  },
+  "language_selector": {
+    "select_language": "Seleccionar Idioma",
+    "current_language": "Actual: {{language}}",
+    "languages": {
+      "en": "English",
+      "es": "Español"
+    }
+  }
+}

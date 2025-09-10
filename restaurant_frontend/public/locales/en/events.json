@@ -1,0 +1,55 @@
+{
+  "title": "Special Events & Promotions",
+  "subtitle": "Don't miss out on our special experiences and limited-time offers.",
+  "featured_title": "Current Events & Offers",
+  "events": {
+    "live_jazz": {
+      "title": "Live Jazz Nights",
+      "subtitle": "Every Friday & Saturday",
+      "description": "Join us for an intimate evening of live jazz featuring local artists. Perfect atmosphere for date nights and celebrations.",
+      "details": [
+        "7:00 PM - 10:00 PM",
+        "No cover charge", 
+        "Cocktail specials available"
+      ],
+      "cta": "Reserve Your Table",
+      "badge": "Weekly"
+    },
+    "wine_dinner": {
+      "title": "Winter Wine Dinner Series",
+      "subtitle": "Limited Time Only",
+      "description": "Experience our carefully curated 5-course winter menu paired with premium wines from renowned vineyards.",
+      "details": [
+        "Available through March",
+        "$85 per person",
+        "Vegetarian options available"
+      ],
+      "cta": "Book Wine Dinner",
+      "badge": "Seasonal"
+    },
+    "happy_hour": {
+      "title": "Happy Hour Special",
+      "subtitle": "Monday - Thursday",
+      "description": "Enjoy 30% off all craft cocktails and appetizers during our extended happy hour.",
+      "details": [
+        "4:00 PM - 6:30 PM",
+        "30% off drinks & appetizers",
+        "Bar seating available"
+      ],
+      "cta": "View Menu",
+      "badge": "Daily Deal"
+    },
+    "valentines": {
+      "title": "Valentine's Day Special",
+      "subtitle": "February 14th",
+      "description": "Celebrate love with our romantic dinner experience featuring a special tasting menu and complimentary champagne.",
+      "details": [
+        "Two seatings: 6:00 PM & 8:30 PM",
+        "Special tasting menu",
+        "Complimentary champagne toast"
+      ],
+      "cta": "Make Reservation",
+      "badge": "Special Event"
+    }
+  }
+}

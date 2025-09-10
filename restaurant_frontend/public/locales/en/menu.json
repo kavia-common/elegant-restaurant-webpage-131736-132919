@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "starters": "Starters",
+    "mains": "Mains",
+    "desserts": "Desserts",
+    "drinks": "Drinks"
+  },
+  "items": {
+    "starters": {
+      "heirloom_tomato_bruschetta": {
+        "name": "Heirloom Tomato Bruschetta",
+        "description": "Grilled sourdough, basil, balsamic glaze"
+      },
+      "crispy_calamari": {
+        "name": "Crispy Calamari",
+        "description": "Lemon aioli, pickled chili"
+      },
+      "charred_broccolini": {
+        "name": "Charred Broccolini",
+        "description": "Almond romesco, lemon zest"
+      }
+    },
+    "mains": {
+      "herb_roasted_chicken": {
+        "name": "Herb-Roasted Chicken",
+        "description": "Garlic mash, seasonal greens, jus"
+      },
+      "seared_salmon": {
+        "name": "Seared Salmon",
+        "description": "Citrus beurre blanc, farro, asparagus"
+      },
+      "wild_mushroom_risotto": {
+        "name": "Wild Mushroom Risotto",
+        "description": "Parmesan, truffle oil, herbs"
+      }
+    },
+    "desserts": {
+      "lemon_tart": {
+        "name": "Lemon Tart",
+        "description": "Toasted meringue, berry coulis"
+      },
+      "chocolate_fondant": {
+        "name": "Chocolate Fondant",
+        "description": "Vanilla gelato, hazelnut praline"
+      },
+      "vanilla_panna_cotta": {
+        "name": "Vanilla Panna Cotta",
+        "description": "Macerated berries, mint"
+      }
+    },
+    "drinks": {
+      "classic_negroni": {
+        "name": "Classic Negroni",
+        "description": "Gin, Campari, sweet vermouth"
+      },
+      "smoky_paloma": {
+        "name": "Smoky Paloma", 
+        "description": "Mezcal, grapefruit, lime, soda"
+      },
+      "zero_proof_spritz": {
+        "name": "Zero-Proof Spritz",
+        "description": "Citrus, hibiscus, soda"
+      }
+    }
+  },
+  "tags": {
+    "vegetarian": "V",
+    "gluten_free": "GF",
+    "non_alcoholic": "NA"
+  },
+  "note": "{{vegetarian}} Vegetarian • {{gluten_free}} Gluten‑Free options available • Please notify us of any allergies or dietary restrictions.",
+  "currency": "$"
+}

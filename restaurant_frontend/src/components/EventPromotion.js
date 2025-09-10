@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * PUBLIC_INTERFACE
@@ -7,69 +8,71 @@ import React, { useState, useCallback } from 'react';
  * and theme integration (light/dark modes).
  */
 function EventPromotion() {
+  const { t } = useTranslation(['common', 'events']);
+  
   // Sample event data - in a real app this would come from a CMS or API
   const eventsData = [
     {
       id: 1,
       type: 'live-music',
-      title: 'Live Jazz Nights',
-      subtitle: 'Every Friday & Saturday',
-      description: 'Join us for an intimate evening of live jazz featuring local artists. Perfect atmosphere for date nights and celebrations.',
-      details: ['7:00 PM - 10:00 PM', 'No cover charge', 'Cocktail specials available'],
-      ctaText: 'Reserve Your Table',
+      titleKey: 'live_jazz.title',
+      subtitleKey: 'live_jazz.subtitle',
+      descriptionKey: 'live_jazz.description',
+      detailsKeys: ['live_jazz.details.0', 'live_jazz.details.1', 'live_jazz.details.2'],
+      ctaKey: 'live_jazz.cta',
       ctaLink: '#reservation',
       backgroundColor: 'var(--color-accent)',
       textColor: '#ffffff',
       icon: '🎷',
-      badge: 'Weekly',
+      badgeKey: 'live_jazz.badge',
       image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1200&auto=format&fit=crop',
       featured: true
     },
     {
       id: 2,
       type: 'seasonal',
-      title: 'Winter Wine Dinner Series',
-      subtitle: 'Limited Time Only',
-      description: 'Experience our carefully curated 5-course winter menu paired with premium wines from renowned vineyards.',
-      details: ['Available through March', '$85 per person', 'Vegetarian options available'],
-      ctaText: 'Book Wine Dinner',
+      titleKey: 'wine_dinner.title',
+      subtitleKey: 'wine_dinner.subtitle',
+      descriptionKey: 'wine_dinner.description',
+      detailsKeys: ['wine_dinner.details.0', 'wine_dinner.details.1', 'wine_dinner.details.2'],
+      ctaKey: 'wine_dinner.cta',
       ctaLink: '#contact',
       backgroundColor: 'var(--color-primary)',
       textColor: '#ffffff',
       icon: '🍷',
-      badge: 'Seasonal',
+      badgeKey: 'wine_dinner.badge',
       image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200&auto=format&fit=crop',
       featured: false
     },
     {
       id: 3,
       type: 'promotion',
-      title: 'Happy Hour Special',
-      subtitle: 'Monday - Thursday',
-      description: 'Enjoy 30% off all craft cocktails and appetizers during our extended happy hour.',
-      details: ['4:00 PM - 6:30 PM', '30% off drinks & appetizers', 'Bar seating available'],
-      ctaText: 'View Menu',
+      titleKey: 'happy_hour.title',
+      subtitleKey: 'happy_hour.subtitle',
+      descriptionKey: 'happy_hour.description',
+      detailsKeys: ['happy_hour.details.0', 'happy_hour.details.1', 'happy_hour.details.2'],
+      ctaKey: 'happy_hour.cta',
       ctaLink: '#menu',
       backgroundColor: 'var(--color-secondary)',
       textColor: '#2d2d2d',
       icon: '🍹',
-      badge: 'Daily Deal',
+      badgeKey: 'happy_hour.badge',
       image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=1200&auto=format&fit=crop',
       featured: false
     },
     {
       id: 4,
       type: 'holiday',
-      title: 'Valentine\'s Day Special',
-      subtitle: 'February 14th',
-      description: 'Celebrate love with our romantic dinner experience featuring a special tasting menu and complimentary champagne.',
-      details: ['Two seatings: 6:00 PM & 8:30 PM', 'Special tasting menu', 'Complimentary champagne toast'],
-      ctaText: 'Make Reservation',
+      titleKey: 'valentines.title',
+      subtitleKey: 'valentines.subtitle',
+      descriptionKey: 'valentines.description',
+      detailsKeys: ['valentines.details.0', 'valentines.details.1', 'valentines.details.2'],
+      ctaKey: 'valentines.cta',
       ctaLink: '#reservation',
       backgroundColor: '#e91e63',
       textColor: '#ffffff',
       icon: '💕',
-      badge: 'Special Event',
+      badgeKey: 'valentines.badge',
       image: 'https://images.unsplash.com/photo-1518621012488-2a6c28ba5ac5?q=80&w=1200&auto=format&fit=crop',
       featured: true
     }
@@ -105,9 +108,9 @@ function EventPromotion() {
           >
             <div className="featured-event-content">
               <div className="event-header">
-                <span className="event-badge" aria-label={`Event type: ${currentEvent.badge}`}>
+                <span className="event-badge" aria-label={`Event type: ${t(`events:events.${currentEvent.badgeKey}`)}`}>
                   <span className="event-icon" aria-hidden="true">{currentEvent.icon}</span>
-                  {currentEvent.badge}
+                  {t(`events:events.${currentEvent.badgeKey}`)}
                 </span>
                 <div className="event-navigation" aria-label="Event navigation">
                   <button
@@ -144,23 +147,23 @@ function EventPromotion() {
               <div className="event-main">
                 <div className="event-text">
                   <h2 id="featured-event-title" className="event-title">
-                    {currentEvent.title}
+                    {t(`events:events.${currentEvent.titleKey}`)}
                   </h2>
-                  <p className="event-subtitle">{currentEvent.subtitle}</p>
-                  <p className="event-description">{currentEvent.description}</p>
+                  <p className="event-subtitle">{t(`events:events.${currentEvent.subtitleKey}`)}</p>
+                  <p className="event-description">{t(`events:events.${currentEvent.descriptionKey}`)}</p>
                   
                   <ul className="event-details" aria-label="Event details">
-                    {currentEvent.details.map((detail, index) => (
-                      <li key={index}>{detail}</li>
+                    {currentEvent.detailsKeys.map((detailKey, index) => (
+                      <li key={index}>{t(`events:events.${detailKey}`)}</li>
                     ))}
                   </ul>
                   
                   <a 
                     href={currentEvent.ctaLink} 
                     className="event-cta-btn"
-                    aria-label={`${currentEvent.ctaText} for ${currentEvent.title}`}
+                    aria-label={`${t(`events:events.${currentEvent.ctaKey}`)} for ${t(`events:events.${currentEvent.titleKey}`)}`}
                   >
-                    {currentEvent.ctaText}
+                    {t(`events:events.${currentEvent.ctaKey}`)}
                     <span aria-hidden="true">→</span>
                   </a>
                 </div>
@@ -168,7 +171,7 @@ function EventPromotion() {
                 <div className="event-image-wrapper">
                   <img
                     src={currentEvent.image}
-                    alt={`${currentEvent.title} promotional image`}
+                    alt={`${t(`events:events.${currentEvent.titleKey}`)} promotional image`}
                     className="event-image"
                     loading="lazy"
                   />
@@ -181,8 +184,8 @@ function EventPromotion() {
         {/* All Events Grid */}
         <div className="events-section">
           <div className="events-header">
-            <h3 className="section-title small">Current Events & Offers</h3>
-            <p className="section-subtitle">Don't miss out on our special experiences and limited-time offers.</p>
+            <h3 className="section-title small">{t('events:featured_title')}</h3>
+            <p className="section-subtitle">{t('events:subtitle')}</p>
           </div>
           
           <div className="events-grid">
@@ -191,7 +194,7 @@ function EventPromotion() {
                 <div className="event-card-header">
                   <span className="event-card-badge">
                     <span aria-hidden="true">{event.icon}</span>
-                    {event.badge}
+                    {t(`events:events.${event.badgeKey}`)}
                   </span>
                   {event.featured && (
                     <span className="featured-indicator" aria-label="Featured event">
@@ -201,13 +204,13 @@ function EventPromotion() {
                 </div>
                 
                 <div className="event-card-content">
-                  <h4 className="event-card-title">{event.title}</h4>
-                  <p className="event-card-subtitle">{event.subtitle}</p>
-                  <p className="event-card-description">{event.description}</p>
+                  <h4 className="event-card-title">{t(`events:events.${event.titleKey}`)}</h4>
+                  <p className="event-card-subtitle">{t(`events:events.${event.subtitleKey}`)}</p>
+                  <p className="event-card-description">{t(`events:events.${event.descriptionKey}`)}</p>
                   
                   <ul className="event-card-details">
-                    {event.details.slice(0, 2).map((detail, index) => (
-                      <li key={index}>{detail}</li>
+                    {event.detailsKeys.slice(0, 2).map((detailKey, index) => (
+                      <li key={index}>{t(`events:events.${detailKey}`)}</li>
                     ))}
                   </ul>
                 </div>
@@ -216,9 +219,9 @@ function EventPromotion() {
                   <a 
                     href={event.ctaLink} 
                     className="event-card-btn"
-                    aria-label={`${event.ctaText} for ${event.title}`}
+                    aria-label={`${t(`events:events.${event.ctaKey}`)} for ${t(`events:events.${event.titleKey}`)}`}
                   >
-                    {event.ctaText}
+                    {t(`events:events.${event.ctaKey}`)}
                   </a>
                 </div>
               </article>

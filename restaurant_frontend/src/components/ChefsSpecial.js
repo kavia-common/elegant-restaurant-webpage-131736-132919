@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 /**
  * PUBLIC_INTERFACE
@@ -7,6 +8,8 @@ import React, { useState, useCallback } from 'react';
  * pricing, accessibility support, and full theme integration (light/dark modes).
  */
 function ChefsSpecial() {
+  const { t } = useTranslation(['common', 'chefs-special']);
+  
   // Featured dishes data - in a real app this would come from a CMS or API
   const featuredDishes = [
     {

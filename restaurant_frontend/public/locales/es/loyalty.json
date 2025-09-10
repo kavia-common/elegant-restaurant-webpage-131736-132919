@@ -1,0 +1,98 @@
+{
+  "title": "Recompensas Casa Moderna",
+  "subtitle": "Únete a nuestro programa de lealtad exclusivo y desbloquea beneficios increíbles, recompensas y experiencias solo para miembros.",
+  "offers": {
+    "title": "Ofertas Actuales para Miembros",
+    "new_member": {
+      "title": "Especial para Nuevos Miembros",
+      "description": "Únete hoy y obtén 50 puntos de bonificación más 10% de descuento en tu primera comida.",
+      "code": "WELCOME10",
+      "validity": "2024-02-29"
+    },
+    "double_points": {
+      "title": "Fin de Semana de Puntos Dobles",
+      "description": "Solo este sábado y domingo - gana puntos dobles en todas las compras.",
+      "code": "DOUBLE2X", 
+      "validity": "2024-02-04"
+    },
+    "birthday": {
+      "title": "Celebración del Mes de Cumpleaños",
+      "description": "Celebra todo el mes con un aperitivo gratis en cada visita durante tu mes de cumpleaños.",
+      "code": "BIRTHDAY",
+      "validity": "Durante el mes de cumpleaños"
+    }
+  },
+  "benefits": {
+    "title": "Beneficios para Miembros",
+    "earn_points": {
+      "title": "Gana Puntos en Cada Visita",
+      "description": "Gana 1 punto por cada dólar gastado. Canjea 100 puntos por $10 de descuento en tu cuenta.",
+      "highlight": "Gana 1 punto = $1 gastado"
+    },
+    "birthday_rewards": {
+      "title": "Recompensas de Cumpleaños",
+      "description": "¡Celebra con nosotros! Obtén un postre de cortesía y una sorpresa especial de cumpleaños.",
+      "highlight": "Postre de cumpleaños gratis"
+    },
+    "member_events": {
+      "title": "Eventos Solo para Miembros",
+      "description": "Acceso exclusivo a catas de vino, mesas del chef y cenas estacionales especiales.",
+      "highlight": "Invitaciones VIP a eventos"
+    },
+    "double_points_days": {
+      "title": "Días de Puntos Dobles",
+      "description": "Disfruta puntos dobles en ocasiones especiales y días de apreciación para miembros.",
+      "highlight": "2x puntos en días especiales"
+    },
+    "welcome_bonus": {
+      "title": "Bono de Bienvenida",
+      "description": "Los nuevos miembros reciben 50 puntos de bonificación y 10% de descuento en su primera visita.",
+      "highlight": "50 puntos + 10% descuento"
+    },
+    "priority_reservations": {
+      "title": "Reservaciones Prioritarias",
+      "description": "Evita la espera con reservas prioritarias y ventanas de reservación exclusivas.",
+      "highlight": "Acceso VIP a reservas"
+    }
+  },
+  "signup": {
+    "title": "¿Listo para Empezar a Ganar Recompensas?",
+    "description": "Únete a Recompensas Casa Moderna hoy y comienza a ganar puntos en cada visita. ¡Es gratis y fácil!",
+    "cta": "Únete Ahora - ¡Es Gratis!",
+    "note": "¿Ya eres miembro? Inicia sesión aquí",
+    "form": {
+      "fields": {
+        "first_name": "Nombre",
+        "email": "Correo Electrónico",
+        "phone": "Número de Teléfono"
+      },
+      "placeholders": {
+        "first_name": "Nombre",
+        "email": "tu@email.com",
+        "phone": "(123) 456-7890"
+      },
+      "submit": "Unirse Ahora",
+      "submitting": "Uniéndose...",
+      "cancel": "Cancelar"
+    },
+    "privacy": "Al unirte, aceptas nuestros Términos y Condiciones y Política de Privacidad."
+  },
+  "status": {
+    "success": {
+      "title": "¡Bienvenido a Recompensas Casa Moderna!",
+      "message": "Te has unido exitosamente a nuestro programa de lealtad. Revisa tu email para tu bono de bienvenida y detalles de membresía."
+    },
+    "error": {
+      "title": "Error en el Registro",
+      "message": "No pudimos procesar tu registro de membresía en este momento. Por favor intenta de nuevo o contáctanos directamente."
+    }
+  },
+  "validation": {
+    "email_required": "La dirección de correo electrónico es requerida",
+    "email_invalid": "Por favor ingresa una dirección de correo electrónico válida",
+    "first_name_required": "El nombre es requerido",
+    "first_name_min_length": "El nombre debe tener al menos 2 caracteres",
+    "phone_required": "El número de teléfono es requerido",
+    "phone_invalid": "Por favor ingresa un número de teléfono válido"
+  }
+}

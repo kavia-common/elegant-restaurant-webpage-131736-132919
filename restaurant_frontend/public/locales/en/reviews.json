@@ -1,0 +1,17 @@
+{
+  "title": "What Our Guests Say",
+  "subtitle": "Hear from our valued customers about their dining experiences at Casa Moderna.",
+  "rating_summary": "Overall rating summary",
+  "average_rating": "Average rating: {{rating}} out of 5 stars",
+  "based_on": "Based on {{count}} reviews",
+  "show_more": "Show More Reviews ({{remaining}} remaining)",
+  "verified": "Verified",
+  "verified_customer": "Verified customer",
+  "show_less": "Show less",
+  "read_more": "Read more",
+  "cta": {
+    "text": "Have you dined with us? We'd love to hear about your experience!",
+    "button": "Share Your Experience"
+  },
+  "customer_photos": "Customer's dining experience photo"
+}

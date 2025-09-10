@@ -1,0 +1,98 @@
+{
+  "title": "Casa Moderna Rewards",
+  "subtitle": "Join our exclusive loyalty program and unlock amazing benefits, rewards, and member-only experiences.",
+  "offers": {
+    "title": "Current Member Offers",
+    "new_member": {
+      "title": "New Member Special",
+      "description": "Join today and get 50 bonus points plus 10% off your first meal.",
+      "code": "WELCOME10",
+      "validity": "2024-02-29"
+    },
+    "double_points": {
+      "title": "Double Points Weekend", 
+      "description": "This Saturday & Sunday only - earn double points on all purchases.",
+      "code": "DOUBLE2X",
+      "validity": "2024-02-04"
+    },
+    "birthday": {
+      "title": "Birthday Month Celebration",
+      "description": "Celebrate all month long with a free appetizer on every visit during your birthday month.",
+      "code": "BIRTHDAY",
+      "validity": "During birthday month"
+    }
+  },
+  "benefits": {
+    "title": "Member Benefits",
+    "earn_points": {
+      "title": "Earn Points Every Visit",
+      "description": "Earn 1 point for every dollar spent. Redeem 100 points for $10 off your bill.",
+      "highlight": "Earn 1 point = $1 spent"
+    },
+    "birthday_rewards": {
+      "title": "Birthday Rewards",
+      "description": "Celebrate with us! Get a complimentary dessert and special birthday surprise.",
+      "highlight": "Free birthday dessert"
+    },
+    "member_events": {
+      "title": "Member-Only Events",
+      "description": "Exclusive access to wine tastings, chef tables, and special seasonal dinners.",
+      "highlight": "VIP event invitations"
+    },
+    "double_points_days": {
+      "title": "Double Points Days",
+      "description": "Enjoy double points on special occasions and member appreciation days.",
+      "highlight": "2x points special days"
+    },
+    "welcome_bonus": {
+      "title": "Welcome Bonus",
+      "description": "New members receive 50 bonus points and 10% off their first visit.",
+      "highlight": "50 points + 10% off"
+    },
+    "priority_reservations": {
+      "title": "Priority Reservations",
+      "description": "Skip the wait with priority booking and exclusive reservation windows.",
+      "highlight": "VIP reservation access"
+    }
+  },
+  "signup": {
+    "title": "Ready to Start Earning Rewards?",
+    "description": "Join Casa Moderna Rewards today and start earning points on every visit. It's free and easy!",
+    "cta": "Join Now - It's Free!",
+    "note": "Already a member? Sign in here",
+    "form": {
+      "fields": {
+        "first_name": "First Name",
+        "email": "Email Address", 
+        "phone": "Phone Number"
+      },
+      "placeholders": {
+        "first_name": "First name",
+        "email": "your@email.com",
+        "phone": "(123) 456-7890"
+      },
+      "submit": "Join Now",
+      "submitting": "Joining...",
+      "cancel": "Cancel"
+    },
+    "privacy": "By joining, you agree to our Terms & Conditions and Privacy Policy."
+  },
+  "status": {
+    "success": {
+      "title": "Welcome to Casa Moderna Rewards!",
+      "message": "You've successfully joined our loyalty program. Check your email for your welcome bonus and membership details."
+    },
+    "error": {
+      "title": "Signup Failed",
+      "message": "We couldn't process your membership signup right now. Please try again or contact us directly."
+    }
+  },
+  "validation": {
+    "email_required": "Email address is required",
+    "email_invalid": "Please enter a valid email address",
+    "first_name_required": "First name is required",
+    "first_name_min_length": "First name must be at least 2 characters",
+    "phone_required": "Phone number is required",
+    "phone_invalid": "Please enter a valid phone number"
+  }
+}
