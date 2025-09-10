@@ -5,6 +5,7 @@ import Reviews from './components/Reviews';
 import EventPromotion from './components/EventPromotion';
 import Newsletter from './components/Newsletter';
 import LoyaltyProgram from './components/LoyaltyProgram';
+import ChefsSpecial from './components/ChefsSpecial';
 
 /**
  * A simple Theme Context to provide theme state and toggle across the app.
@@ -58,6 +59,7 @@ function App() {
           <EventPromotion />
           <LoyaltyProgram />
           <Menu />
+          <ChefsSpecial />
           <Reviews />
           <Reservation />
           <Details />
@@ -96,6 +98,7 @@ function Navbar() {
           <a href="#events">Events</a>
           <a href="#loyalty">Rewards</a>
           <a href="#menu">Menu</a>
+          <a href="#chefs-special">Chef's Special</a>
           <a href="#reviews">Reviews</a>
           <a href="#reservation">Reservations</a>
           <a href="#hours">Hours</a>
@@ -345,6 +348,7 @@ function Footer() {
           <li><a href="#events">Events</a></li>
           <li><a href="#loyalty">Rewards</a></li>
           <li><a href="#menu">Menu</a></li>
+          <li><a href="#chefs-special">Chef's Special</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#reservation">Reservations</a></li>
           <li><a href="#hours">Hours</a></li>
