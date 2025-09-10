@@ -75,9 +75,17 @@ function App() {
 
 function SkipToContent() {
   return (
-    <a className="skip-link" href="#main-content">
-      Skip to main content
-    </a>
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+      <a className="skip-link" href="#menu" style={{ left: '140px' }}>
+        Skip to menu
+      </a>
+      <a className="skip-link" href="#reservation" style={{ left: '250px' }}>
+        Skip to reservations
+      </a>
+    </>
   );
 }
 
@@ -85,36 +93,78 @@ function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const nextTheme = theme === 'light' ? 'dark' : 'light';
   const icon = theme === 'light' ? '🌙' : '☀️';
+  
   return (
     <header className="navbar" role="banner">
       <div className="container nav-inner">
         <div className="brand">
           <span className="logo" aria-hidden="true">🍽️</span>
-          <a href="#hero" className="brand-name" aria-label="Go to top">
+          <a 
+            href="#hero" 
+            className="brand-name" 
+            aria-label="Casa Moderna Restaurant - Go to top of page"
+          >
             Casa Moderna
           </a>
         </div>
-        <nav className="nav-links" aria-label="Main navigation">
-          <a href="#events">Events</a>
-          <a href="#loyalty">Rewards</a>
-          <a href="#menu">Menu</a>
-          <a href="#chefs-special">Chef's Special</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#reservation">Reservations</a>
-          <a href="#hours">Hours</a>
-          <a href="#contact">Contact</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#location">Location</a>
-          <a href="#newsletter">Newsletter</a>
+        <nav className="nav-links" aria-label="Main navigation" role="navigation">
+          <a href="#events" aria-describedby="nav-events-desc">
+            Events
+            <span id="nav-events-desc" className="sr-only">Special events and promotions</span>
+          </a>
+          <a href="#loyalty" aria-describedby="nav-loyalty-desc">
+            Rewards
+            <span id="nav-loyalty-desc" className="sr-only">Loyalty program and member benefits</span>
+          </a>
+          <a href="#menu" aria-describedby="nav-menu-desc">
+            Menu
+            <span id="nav-menu-desc" className="sr-only">Food and drink menu</span>
+          </a>
+          <a href="#chefs-special" aria-describedby="nav-special-desc">
+            Chef's Special
+            <span id="nav-special-desc" className="sr-only">Featured signature dishes</span>
+          </a>
+          <a href="#reviews" aria-describedby="nav-reviews-desc">
+            Reviews
+            <span id="nav-reviews-desc" className="sr-only">Customer testimonials and ratings</span>
+          </a>
+          <a href="#reservation" aria-describedby="nav-reservation-desc">
+            Reservations
+            <span id="nav-reservation-desc" className="sr-only">Book a table</span>
+          </a>
+          <a href="#hours" aria-describedby="nav-hours-desc">
+            Hours
+            <span id="nav-hours-desc" className="sr-only">Opening hours and schedule</span>
+          </a>
+          <a href="#contact" aria-describedby="nav-contact-desc">
+            Contact
+            <span id="nav-contact-desc" className="sr-only">Contact information and form</span>
+          </a>
+          <a href="#gallery" aria-describedby="nav-gallery-desc">
+            Gallery
+            <span id="nav-gallery-desc" className="sr-only">Restaurant photos and ambiance</span>
+          </a>
+          <a href="#location" aria-describedby="nav-location-desc">
+            Location
+            <span id="nav-location-desc" className="sr-only">Address and map</span>
+          </a>
+          <a href="#newsletter" aria-describedby="nav-newsletter-desc">
+            Newsletter
+            <span id="nav-newsletter-desc" className="sr-only">Subscribe to updates</span>
+          </a>
         </nav>
         <button
           className="theme-toggle"
           type="button"
           onClick={toggleTheme}
-          aria-label={`Switch to ${nextTheme} theme`}
+          aria-label={`Switch to ${nextTheme} theme. Currently using ${theme} theme`}
+          aria-pressed={theme === 'dark'}
           title={`Switch to ${nextTheme} theme`}
         >
           <span aria-hidden="true">{icon}</span>
+          <span className="sr-only-focusable">
+            Current theme: {theme}
+          </span>
           <span style={{ fontWeight: 700, fontSize: 12, letterSpacing: 0.3 }}>
             {theme === 'light' ? 'Light' : 'Dark'}
           </span>
@@ -126,27 +176,60 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section id="hero" className="hero" aria-label="Restaurant introduction">
+    <section id="hero" className="hero" aria-labelledby="hero-title">
       <div className="container hero-inner">
         <div className="hero-content">
-          <h1 className="hero-title">Modern Flavors. Warm Hospitality.</h1>
+          <h1 id="hero-title" className="hero-title">
+            Modern Flavors. Warm Hospitality.
+          </h1>
           <p className="hero-subtitle">
             A stylish dining experience featuring seasonal ingredients,
             wood‑fired specials, and craft cocktails.
           </p>
-          <div className="hero-actions">
-            <a href="#menu" className="btn btn-primary">Explore Menu</a>
-            <a href="#reservation" className="btn btn-accent" aria-label="Reserve a table">
+          <div className="hero-actions" role="group" aria-label="Main actions">
+            <a 
+              href="#menu" 
+              className="btn btn-primary"
+              aria-describedby="menu-action-desc"
+            >
+              <span aria-hidden="true">🍽️</span>
+              Explore Menu
+              <span id="menu-action-desc" className="sr-only">
+                View our full menu with starters, mains, desserts, and drinks
+              </span>
+            </a>
+            <a 
+              href="#reservation" 
+              className="btn btn-accent" 
+              aria-describedby="reservation-action-desc"
+            >
+              <span aria-hidden="true">📅</span>
               Reserve a Table
+              <span id="reservation-action-desc" className="sr-only">
+                Book a table for your dining experience
+              </span>
             </a>
           </div>
-          <ul className="hero-highlights" aria-label="Highlights">
-            <li>Seasonal • Local • Sustainable</li>
-            <li>Vegetarian & Gluten‑Free Options</li>
-            <li>Craft Cocktails & Fine Wines</li>
+          <ul className="hero-highlights" aria-label="Restaurant highlights and features">
+            <li>
+              <span className="sr-only">Features: </span>
+              Seasonal • Local • Sustainable
+            </li>
+            <li>
+              <span className="sr-only">Dietary options: </span>
+              Vegetarian & Gluten‑Free Options
+            </li>
+            <li>
+              <span className="sr-only">Beverages: </span>
+              Craft Cocktails & Fine Wines
+            </li>
           </ul>
         </div>
-        <div className="hero-card" role="img" aria-label="Featured dishes imagery" />
+        <div 
+          className="hero-card" 
+          role="img" 
+          aria-label="Beautiful presentation of our featured dishes in an elegant restaurant setting"
+        />
       </div>
     </section>
   );
@@ -175,21 +258,24 @@ function Menu() {
   ];
 
   return (
-    <section id="menu" className="menu" aria-label="Menu">
+    <section id="menu" className="menu" aria-labelledby="menu-title">
       <div className="container">
-        <h2 className="section-title">Our Menu</h2>
+        <h2 id="menu-title" className="section-title">Our Menu</h2>
         <p className="section-subtitle">Thoughtfully curated dishes, prepared fresh daily.</p>
 
-        <div className="menu-grid">
+        <div className="menu-grid" role="group" aria-label="Menu sections">
           <MenuSection title="Starters" items={starters} icon="🥗" />
           <MenuSection title="Mains" items={mains} icon="🍽️" highlight />
           <MenuSection title="Desserts" items={desserts} icon="🧁" />
           <MenuSection title="Drinks" items={drinks} icon="🍹" />
         </div>
 
-        <div className="menu-note" role="note">
-          <span className="tag">V</span> Vegetarian • <span className="tag">GF</span> Gluten‑Free options available •
-          Please notify us of any allergies or dietary restrictions.
+        <div className="menu-note" role="complementary" aria-label="Dietary information">
+          <p>
+            <span className="tag" aria-label="Vegetarian">V</span> Vegetarian • 
+            <span className="tag" aria-label="Gluten-Free">GF</span> Gluten‑Free options available •
+            Please notify us of any allergies or dietary restrictions.
+          </p>
         </div>
       </div>
     </section>
@@ -198,21 +284,43 @@ function Menu() {
 
 function MenuSection({ title, items, icon, highlight = false }) {
   return (
-    <div className={`menu-section ${highlight ? 'highlight' : ''}`} role="region" aria-labelledby={`${title}-heading`}>
+    <div 
+      className={`menu-section ${highlight ? 'highlight' : ''}`} 
+      role="region" 
+      aria-labelledby={`${title.toLowerCase()}-heading`}
+      aria-describedby={highlight ? `${title.toLowerCase()}-featured` : undefined}
+    >
       <div className="menu-section-header">
-        <h3 id={`${title}-heading`} className="menu-section-title">
-          <span className="menu-icon" aria-hidden="true">{icon}</span> {title}
+        <h3 id={`${title.toLowerCase()}-heading`} className="menu-section-title">
+          <span className="menu-icon" aria-hidden="true">{icon}</span> 
+          {title}
+          {highlight && <span className="sr-only"> (Featured section)</span>}
         </h3>
+        {highlight && (
+          <span id={`${title.toLowerCase()}-featured`} className="sr-only">
+            This is our featured menu section with popular items
+          </span>
+        )}
         <div className="menu-divider" aria-hidden="true" />
       </div>
-      <ul className="menu-items">
-        {items.map((item) => (
-          <li className="menu-item" key={item.name}>
+      <ul className="menu-items" role="list" aria-label={`${title} menu items`}>
+        {items.map((item, index) => (
+          <li className="menu-item" key={item.name} role="listitem">
             <div className="menu-item-main">
               <span className="menu-item-name">
-                {item.name} {item.tag && <span className="tag">{item.tag}</span>}
+                {item.name} 
+                {item.tag && (
+                  <span 
+                    className="tag" 
+                    aria-label={item.tag === 'V' ? 'Vegetarian' : item.tag === 'GF' ? 'Gluten-Free' : item.tag === 'NA' ? 'Non-Alcoholic' : item.tag}
+                  >
+                    {item.tag}
+                  </span>
+                )}
               </span>
-              <span className="menu-item-price">${item.price}</span>
+              <span className="menu-item-price" aria-label={`Price: ${item.price} dollars`}>
+                ${item.price}
+              </span>
             </div>
             <p className="menu-item-desc">{item.desc}</p>
           </li>
