@@ -4,6 +4,7 @@ import Reservation from './components/Reservation';
 import Reviews from './components/Reviews';
 import EventPromotion from './components/EventPromotion';
 import Newsletter from './components/Newsletter';
+import LoyaltyProgram from './components/LoyaltyProgram';
 
 /**
  * A simple Theme Context to provide theme state and toggle across the app.
@@ -55,6 +56,7 @@ function App() {
         <main id="main-content">
           <Hero />
           <EventPromotion />
+          <LoyaltyProgram />
           <Menu />
           <Reviews />
           <Reservation />
@@ -92,6 +94,7 @@ function Navbar() {
         </div>
         <nav className="nav-links" aria-label="Main navigation">
           <a href="#events">Events</a>
+          <a href="#loyalty">Rewards</a>
           <a href="#menu">Menu</a>
           <a href="#reviews">Reviews</a>
           <a href="#reservation">Reservations</a>
@@ -340,6 +343,7 @@ function Footer() {
         <p className="footer-copy">© {year} Casa Moderna. All rights reserved.</p>
         <ul className="footer-links" aria-label="Footer links">
           <li><a href="#events">Events</a></li>
+          <li><a href="#loyalty">Rewards</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#reservation">Reservations</a></li>

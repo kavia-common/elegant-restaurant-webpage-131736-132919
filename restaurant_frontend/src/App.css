@@ -1611,6 +1611,481 @@ input:focus, textarea:focus {
   color: var(--text-muted);
 }
 
+
+/* Loyalty Program Section */
+.loyalty-program {
+  padding: 64px 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--color-primary) 6%, var(--bg) 94%) 0%,
+    color-mix(in oklab, var(--color-accent) 8%, var(--bg) 92%) 100%
+  );
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.loyalty-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.loyalty-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: clamp(24px, 3.5vw, 32px);
+  font-weight: 800;
+  margin: 0;
+  color: var(--text);
+}
+
+.loyalty-icon {
+  font-size: 28px;
+}
+
+.loyalty-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 12px auto 0;
+  max-width: 600px;
+}
+
+/* Current Offers Section */
+.current-offers-section {
+  margin-bottom: 48px;
+}
+
+.offers-title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 24px;
+  color: var(--text);
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.offer-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.offer-card.featured {
+  border-color: var(--color-primary);
+  background: color-mix(in oklab, var(--bg) 96%, var(--color-primary) 4%);
+  transform: translateY(-2px);
+}
+
+.offer-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+[data-theme="dark"] .offer-card:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+}
+
+.offer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.offer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: color-mix(in oklab, var(--color-accent) 12%, var(--bg) 88%);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 25%, var(--border) 75%);
+  color: var(--color-accent);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.offer-badge.limited-time {
+  background: color-mix(in oklab, var(--color-primary) 12%, var(--bg) 88%);
+  border-color: color-mix(in oklab, var(--color-primary) 25%, var(--border) 75%);
+  color: var(--color-primary);
+}
+
+.offer-badge.birthday {
+  background: color-mix(in oklab, var(--color-secondary) 20%, var(--bg) 80%);
+  border-color: color-mix(in oklab, var(--color-secondary) 40%, var(--border) 60%);
+  color: #8b5a00;
+}
+
+[data-theme="dark"] .offer-badge.birthday {
+  color: #ffeb3b;
+}
+
+.featured-badge {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.offer-content {
+  display: grid;
+  gap: 12px;
+}
+
+.offer-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.offer-description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--text);
+}
+
+.offer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.offer-code,
+.offer-validity {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.offer-code strong {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Main Loyalty Content */
+.loyalty-main {
+  display: grid;
+  gap: 40px;
+}
+
+/* Benefits Section */
+.benefits-section {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.benefits-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 24px;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.benefit-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .benefit-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.benefit-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-content {
+  display: grid;
+  gap: 6px;
+}
+
+.benefit-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.benefit-description {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.benefit-highlight {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: color-mix(in oklab, var(--color-accent) 10%, transparent 90%);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Signup Section */
+.signup-section {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.signup-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.signup-description {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+.signup-cta {
+  display: grid;
+  gap: 16px;
+}
+
+.signup-btn {
+  font-size: 16px;
+  padding: 16px 24px;
+}
+
+.signup-note {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Signup Form */
+.signup-form {
+  display: grid;
+  gap: 20px;
+  text-align: left;
+}
+
+.signup-form-content {
+  display: grid;
+  gap: 20px;
+}
+
+.signup-inputs {
+  display: grid;
+  gap: 16px;
+}
+
+.signup-field {
+  display: grid;
+  gap: 6px;
+  position: relative;
+}
+
+.signup-input {
+  width: 100%;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+  background: var(--bg-muted);
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 500;
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0,121,107,0.15);
+  background: var(--bg);
+}
+
+.signup-input.error {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(211,47,47,0.15);
+}
+
+.signup-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+.signup-error {
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+  text-align: left;
+}
+
+.signup-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-submit {
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 140px;
+}
+
+.signup-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.btn-text:hover,
+.btn-text:focus {
+  color: var(--text);
+  background: var(--bg-muted);
+  outline: none;
+}
+
+.signup-privacy {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.privacy-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Loyalty Status Messages */
+.loyalty-status {
+  margin-top: 32px;
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 2px solid;
+  animation: slideIn 0.3s ease-out;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loyalty-status.success {
+  background: color-mix(in oklab, var(--bg) 92%, #22c55e 8%);
+  border-color: #22c55e;
+  color: var(--text);
+}
+
+.loyalty-status.error {
+  background: color-mix(in oklab, var(--bg) 92%, var(--color-primary) 8%);
+  border-color: var(--color-primary);
+  color: var(--text);
+}
+
+.loyalty-status .status-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.loyalty-status .status-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.loyalty-status .status-content h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.loyalty-status .status-content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
 /* Screen Reader Only */
 .sr-only {
   position: absolute;
@@ -1624,6 +2099,94 @@ input:focus, textarea:focus {
   border: 0;
 }
 =======
+
+/* Responsive adjustments for loyalty program */
+@media (max-width: 980px) {
+  .offers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  
+  .benefit-card {
+    padding: 14px;
+  }
+  
+  .signup-card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .loyalty-program {
+    padding: 48px 0;
+  }
+  
+  .loyalty-header {
+    margin-bottom: 32px;
+  }
+  
+  .current-offers-section {
+    margin-bottom: 32px;
+  }
+  
+  .offers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .offer-card {
+    padding: 16px;
+  }
+  
+  .offer-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .benefits-section {
+    padding: 20px;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .benefit-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .benefit-icon {
+    align-self: center;
+  }
+  
+  .signup-card {
+    padding: 20px;
+  }
+  
+  .signup-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .signup-submit {
+    width: 100%;
+  }
+  
+  .loyalty-status {
+    margin-top: 24px;
+    padding: 16px;
+  }
+}
 
 /* Responsive adjustments for newsletter */
 @media (max-width: 980px) {
