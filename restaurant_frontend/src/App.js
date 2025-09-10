@@ -1,5 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo, useState, useCallback, createContext, useContext } from 'react';
 import './App.css';
+
+/**
+ * A simple Theme Context to provide theme state and toggle across the app.
+ */
+const ThemeContext = createContext({ theme: 'light', toggleTheme: () => {} });
 
 // PUBLIC_INTERFACE
 function App() {
@@ -7,25 +12,52 @@ function App() {
    * PUBLIC_INTERFACE
    * Main application entry for the restaurant landing page.
    * Renders: Navbar, Hero, Menu sections, Hours, Contact, Gallery, Map, and Footer.
+   * Adds light/dark theming with persistence via localStorage.
    */
+  const [theme, setTheme] = useState('light');
+
+  // On mount: Use saved preference or system preference; default to light.
   useEffect(() => {
-    // Enforce light theme as per requirements
-    document.documentElement.setAttribute('data-theme', 'light');
+    const saved = window.localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
+      setTheme(saved);
+      return;
+    }
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
   }, []);
 
+  // Apply theme to document element and persist.
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      window.localStorage.setItem('theme', theme);
+    } catch {
+      // ignore storage errors
+    }
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    setTheme((t) => (t === 'light' ? 'dark' : 'light'));
+  }, []);
+
+  const ctxValue = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
+
   return (
-    <div className="App">
-      <SkipToContent />
-      <Navbar />
-      <main id="main-content">
-        <Hero />
-        <Menu />
-        <Details />
-        <Gallery />
-        <Location />
-      </main>
-      <Footer />
-    </div>
+    <ThemeContext.Provider value={ctxValue}>
+      <div className="App">
+        <SkipToContent />
+        <Navbar />
+        <main id="main-content">
+          <Hero />
+          <Menu />
+          <Details />
+          <Gallery />
+          <Location />
+        </main>
+        <Footer />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
@@ -38,6 +70,9 @@ function SkipToContent() {
 }
 
 function Navbar() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const nextTheme = theme === 'light' ? 'dark' : 'light';
+  const icon = theme === 'light' ? '🌙' : '☀️';
   return (
     <header className="navbar" role="banner">
       <div className="container nav-inner">
@@ -54,6 +89,18 @@ function Navbar() {
           <a href="#gallery">Gallery</a>
           <a href="#location">Location</a>
         </nav>
+        <button
+          className="theme-toggle"
+          type="button"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${nextTheme} theme`}
+          title={`Switch to ${nextTheme} theme`}
+        >
+          <span aria-hidden="true">{icon}</span>
+          <span style={{ fontWeight: 700, fontSize: 12, letterSpacing: 0.3 }}>
+            {theme === 'light' ? 'Light' : 'Dark'}
+          </span>
+        </button>
       </div>
     </header>
   );

@@ -3,6 +3,8 @@
   --color-primary: #D32F2F;  /* red */
   --color-secondary: #FFEB3B;/* yellow */
   --color-accent: #00796B;   /* teal */
+
+  /* Light theme defaults */
   --bg: #ffffff;
   --bg-muted: #f7f7f8;
   --text: #1f2937;
@@ -14,8 +16,26 @@
   --container: 1200px;
 }
 
+/* Light mode explicit variables (for clarity if needed) */
 [data-theme="light"] {
   color-scheme: light;
+  --bg: #ffffff;
+  --bg-muted: #f7f7f8;
+  --text: #1f2937;
+  --text-muted: #4b5563;
+  --border: #e5e7eb;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Dark mode variables */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1216;          /* near-black */
+  --bg-muted: #171b21;    /* card/background muted */
+  --text: #e6e7eb;        /* primary text */
+  --text-muted: #a4adbb;  /* secondary text */
+  --border: #2a2f36;      /* subtle borders */
+  --shadow: 0 8px 24px rgba(0,0,0,0.45);
 }
 
 * { box-sizing: border-box; }
@@ -53,7 +73,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255,255,255,0.85);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
@@ -100,11 +120,29 @@ body {
   outline: none;
 }
 
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  color: var(--text);
+  cursor: pointer;
+}
+.theme-toggle:hover,
+.theme-toggle:focus {
+  background: color-mix(in oklab, var(--bg-muted) 70%, var(--bg) 30%);
+  outline: none;
+}
+
 /* Hero */
 .hero {
   background:
     radial-gradient(1200px 300px at 10% -10%, rgba(211,47,47,0.08), transparent 60%),
-    radial-gradient(800px 300px at 90% -10%, rgba(0,121,107,0.08), transparent 60%),
+    radial-gradient(800px 300px at 90% -10%, rgba(0,121,107,0.10), transparent 60%),
     var(--bg);
   border-bottom: 1px solid var(--border);
 }
@@ -213,8 +251,8 @@ body {
   box-shadow: var(--shadow);
 }
 .menu-section.highlight {
-  background: #fff7f7;
-  border-color: rgba(211,47,47,0.25);
+  background: color-mix(in oklab, var(--bg) 92%, #D32F2F 8%);
+  border-color: color-mix(in oklab, var(--border) 70%, #D32F2F 30%);
 }
 .menu-section-header {
   display: flex;
@@ -233,8 +271,8 @@ body {
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: rgba(0,121,107,0.1);
-  border: 1px solid rgba(0,121,107,0.2);
+  background: color-mix(in oklab, var(--color-accent) 14%, var(--bg) 86%);
+  border: 1px solid color-mix(in oklab, var(--color-accent) 32%, var(--border) 68%);
 }
 .menu-divider {
   height: 1px;
@@ -299,7 +337,7 @@ body {
   gap: 18px;
 }
 .card {
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px;
@@ -348,6 +386,7 @@ input[type="text"], input[type="email"], textarea {
   padding: 12px 12px;
   font-size: 14px;
   background: var(--bg-muted);
+  color: var(--text);
 }
 input:focus, textarea:focus {
   outline: none;
