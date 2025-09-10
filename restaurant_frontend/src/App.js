@@ -3,6 +3,7 @@ import './App.css';
 import Reservation from './components/Reservation';
 import Reviews from './components/Reviews';
 import EventPromotion from './components/EventPromotion';
+import Newsletter from './components/Newsletter';
 
 /**
  * A simple Theme Context to provide theme state and toggle across the app.
@@ -60,6 +61,7 @@ function App() {
           <Details />
           <Gallery />
           <Location />
+          <Newsletter />
         </main>
         <Footer />
       </div>
@@ -97,6 +99,7 @@ function Navbar() {
           <a href="#contact">Contact</a>
           <a href="#gallery">Gallery</a>
           <a href="#location">Location</a>
+          <a href="#newsletter">Newsletter</a>
         </nav>
         <button
           className="theme-toggle"
@@ -344,6 +347,7 @@ function Footer() {
           <li><a href="#contact">Contact</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#location">Location</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
         </ul>
       </div>
     </footer>
