@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState, useCallback, createContext, useContext } from 'react';
 import './App.css';
+import Reservation from './components/Reservation';
 
 /**
  * A simple Theme Context to provide theme state and toggle across the app.
@@ -51,6 +52,7 @@ function App() {
         <main id="main-content">
           <Hero />
           <Menu />
+          <Reservation />
           <Details />
           <Gallery />
           <Location />
@@ -84,6 +86,7 @@ function Navbar() {
         </div>
         <nav className="nav-links" aria-label="Main navigation">
           <a href="#menu">Menu</a>
+          <a href="#reservation">Reservations</a>
           <a href="#hours">Hours</a>
           <a href="#contact">Contact</a>
           <a href="#gallery">Gallery</a>
@@ -118,7 +121,7 @@ function Hero() {
           </p>
           <div className="hero-actions">
             <a href="#menu" className="btn btn-primary">Explore Menu</a>
-            <a href="#contact" className="btn btn-accent" aria-label="Reserve a table">
+            <a href="#reservation" className="btn btn-accent" aria-label="Reserve a table">
               Reserve a Table
             </a>
           </div>
@@ -328,6 +331,7 @@ function Footer() {
         <p className="footer-copy">© {year} Casa Moderna. All rights reserved.</p>
         <ul className="footer-links" aria-label="Footer links">
           <li><a href="#menu">Menu</a></li>
+          <li><a href="#reservation">Reservations</a></li>
           <li><a href="#hours">Hours</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#gallery">Gallery</a></li>
