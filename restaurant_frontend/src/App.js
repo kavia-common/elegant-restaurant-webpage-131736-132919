@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState, useCallback, createContext, useCon
 import './App.css';
 import Reservation from './components/Reservation';
 import Reviews from './components/Reviews';
+import EventPromotion from './components/EventPromotion';
 
 /**
  * A simple Theme Context to provide theme state and toggle across the app.
@@ -52,6 +53,7 @@ function App() {
         <Navbar />
         <main id="main-content">
           <Hero />
+          <EventPromotion />
           <Menu />
           <Reviews />
           <Reservation />
@@ -87,6 +89,7 @@ function Navbar() {
           </a>
         </div>
         <nav className="nav-links" aria-label="Main navigation">
+          <a href="#events">Events</a>
           <a href="#menu">Menu</a>
           <a href="#reviews">Reviews</a>
           <a href="#reservation">Reservations</a>
@@ -333,6 +336,7 @@ function Footer() {
         </p>
         <p className="footer-copy">© {year} Casa Moderna. All rights reserved.</p>
         <ul className="footer-links" aria-label="Footer links">
+          <li><a href="#events">Events</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#reservation">Reservations</a></li>
