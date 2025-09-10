@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState, useCallback, createContext, useContext } from 'react';
 import './App.css';
 import Reservation from './components/Reservation';
+import Reviews from './components/Reviews';
 
 /**
  * A simple Theme Context to provide theme state and toggle across the app.
@@ -52,6 +53,7 @@ function App() {
         <main id="main-content">
           <Hero />
           <Menu />
+          <Reviews />
           <Reservation />
           <Details />
           <Gallery />
@@ -86,6 +88,7 @@ function Navbar() {
         </div>
         <nav className="nav-links" aria-label="Main navigation">
           <a href="#menu">Menu</a>
+          <a href="#reviews">Reviews</a>
           <a href="#reservation">Reservations</a>
           <a href="#hours">Hours</a>
           <a href="#contact">Contact</a>
@@ -331,6 +334,7 @@ function Footer() {
         <p className="footer-copy">© {year} Casa Moderna. All rights reserved.</p>
         <ul className="footer-links" aria-label="Footer links">
           <li><a href="#menu">Menu</a></li>
+          <li><a href="#reviews">Reviews</a></li>
           <li><a href="#reservation">Reservations</a></li>
           <li><a href="#hours">Hours</a></li>
           <li><a href="#contact">Contact</a></li>
